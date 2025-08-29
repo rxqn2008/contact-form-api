@@ -19,6 +19,10 @@ app.config['MAIL_DEFAULT_SENDER'] = os.environ.get('MAIL_DEFAULT_SENDER')  # 默
 
 mail = Mail(app)
 
+@app.route('/')
+def home():
+    return 'Hello, great world!'
+
 @app.route('/api/message', methods=['POST'])
 def submit_message():
     """提交留言并发送邮件"""
